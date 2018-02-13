@@ -1,4 +1,4 @@
-from crawler import Browser, Cloudbet, Nitrogen, Sportsbet
+import pandas as pd
 
 class Cruncher:
     def __init__(self, df1, df2):

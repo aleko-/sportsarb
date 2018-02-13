@@ -1,5 +1,6 @@
 from crawler import Browser, Cloudbet, Nitrogen, Sportsbet, Betcoin
 from cruncher import Cruncher
+import pandas as pd
 
 pd.set_option('display.max_rows', None)
 
@@ -24,7 +25,7 @@ def change_sport(bot1, bot2, sport):
 
     return (df1, df2)
 
-def recalc(df1, df2):
+def calc(df1, df2):
     cruncher = Cruncher(df1=df1, df2=df2)
     cruncher.check_moneyline()
     cruncher.check_ou()
@@ -34,10 +35,14 @@ if __name__ == '__main__':
     cloud.go_to_sport('nba')
     cloud.make_soup()
     cloud.parse()
+    df1 = cloud.get_dataframe()
 
     nitro = Nitrogen()
     nitro.send_login()
     nitro.go_to_sport('nba')
     nitro.make_soup()
     nitro.parse()
+    df2 = nitro.get_dataframe()
+
+    calc(df1, df2)
 

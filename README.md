@@ -1,8 +1,8 @@
 # sportsarb
 
-Code will successfully identify arbitrage opportunities from supported websites. Future work should focus on automating the interactions between cralwers, multiprocessing so that cralwers can spawn simaltaneously, and adding support for more sports and websites.
+Code will successfully identify arbitrage opportunities from supported sports betting websites. Future work should focus on automating the interactions between cralwers, multiprocessing so that cralwers can spawn simaltaneously, and adding support for more sports and websites.
 
-main.py
+If the site you want to scrape requires a login, then you will need to create a passwords.txt file with the username on the first line and password on the second (or hard code the credentials into the crawler.py file ). If a team's name is different on two different websites, add the data to namefix.txt.
 
 ## usage
 ----
